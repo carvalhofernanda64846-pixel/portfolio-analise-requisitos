@@ -25,7 +25,3 @@ Para cada estudo de caso, a documentação de requisitos contempla:
 - 📁 [Estudo de Caso 02 - Em breve]
 
 ---
-
-### 📬 Contato
-* **LinkedIn:** [Insira o link do seu perfil aqui]
-* **E-mail:** [Insira seu e-mail aqui]
