@@ -21,7 +21,7 @@ Para cada estudo de caso, a documentação de requisitos contempla:
 
 *Em breve, os primeiros projetos documentados estarão disponíveis nas pastas abaixo:*
 
-- 📁 [Estudo de Caso 01 -[./estudo-caso-sicoob/README.md]
+- 📁 [Estudo de Caso 01 — Landing Page Sicoob](./estudo-caso-sicoob/README.md)
 - 📁 [Estudo de Caso 02 - Em breve]
 
 ---
