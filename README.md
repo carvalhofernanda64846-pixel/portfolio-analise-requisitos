@@ -1,6 +1,6 @@
 # 🚀 Portfólio de Engenharia de Requisitos & Produto
 
-Bem-vindo(a) ao meu portfólio prático! Este repositório é dedicado a demonstrar minha atuação como **Analista de Requisitos / Product Analyst**, com foco em transformar necessidades de negócios e fluxos complexos em especificações técnicas claras, estruturadas e universalmente acessíveis.
+Bem-vindo(a) ao meu portfólio prático! Este repositório é dedicado a demonstrar minha atuação como **Analista de Requisitos / Product Analyst**, com foco em transformar regras de negócio e fluxos complexos em especificações técnicas claras, estruturadas e universalmente acessíveis.
 
 Aqui você encontrará estudos de caso reais baseados em auditorias e engenharia reversa de grandes portais e aplicativos do mercado (bancos, e-commerce e serviços), detalhando como o produto deve nascer estruturado para garantir eficiência operacional e inclusão desde a sua concepção (*Shift-Left*).
 
