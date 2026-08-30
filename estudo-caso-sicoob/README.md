@@ -1,54 +1,62 @@
-# 📊 Estudo de Caso 01: Especificação de Requisitos e Regras de Negócio — Landing Page Sicoob
+# 🏦 Estudo de Caso 01: Engenharia de Requisitos e Especificação Funcional — Landing Page Sicoob
 
-## 1. Visão Geral e Contexto de Negócio
-Este documento detalha a engenharia de requisitos e a especificação funcional da landing page da campanha **Poupança Premiada Sicoob 2026**. O objetivo foi redesenhar e auditar a **jornada de conversão e engajamento do cliente**, garantindo que as regras dos sorteios, a tabela de períodos e os tutoriais de participação estivessem 100% claros, sem falhas de fluxo ou links órfãos. Como padrão de excelência de qualidade, a entrega também assegurou compatibilidade com padrões universais de acessibilidade (WCAG 2.1), ampliando o alcance da campanha para 100% do público.
+## 📈 1. Visão Geral e Contexto de Negócio
+Este documento detalha a engenharia de requisitos e a especificação funcional da landing page da campanha Poupança Premiada Sicoob. O objetivo principal foi mapear e desenhar a jornada de conversão e engajamento do cliente, garantindo que as regras dos sorteios, a tabela de períodos e os tutoriais de participação estivessem transparentes, mitigando falhas de fluxo ou links órfãos que pudessem prejudicar as metas comerciais da campanha. 
 
----
-
-## 2. Mapeamento da Jornada do Usuário e Regras de Negócio
-Durante a análise funcional da landing page, identificamos três gargalos principais que impactavam diretamente a conversão e a clareza das informações:
-
-* **Transparência de Premiação e Regras:** Banners com informações cruciais (como "A cada R$ 200 = 1 cupom" e os modelos dos veículos sorteados) estavam atrelados exclusivamente a elementos visuais estáticos, gerando perda de contexto caso a camada gráfica falhasse na renderização.
-* **Integridade dos Tutoriais ("Como Participar" e "Como Abrir Conta"):** Blocos de instrução em passos ordenados careciam de marcação semântica estrutural, o que poderia fragmentar a leitura sequencial em dispositivos móveis ou de renderização alternativa.
-* **Saúde dos Links e CTAs (Call to Action):** Foram mapeados elementos interativos sem rótulos de destino ou com âncoras vazias, gerando risco de cliques perdidos na jornada do usuário.
+Como padrão de excelência e governança de software, a entrega também assegurou a compatibilidade com padrões universais de qualidade e acessibilidade (WCAG 2.1), ampliando o alcance digital da campanha para 100% dos potenciais poupadores.
 
 ---
 
-## 3. Histórias de Usuário (User Stories) e Critérios de Aceite (BDD / Gherkin)
+## 🗺️ 2. Mapeamento da Jornada do Usuário e Regras de Negócio
+Durante a análise funcional e a engenharia reversa da interface, foram identificados três gargalos de produto que impactavam diretamente a taxa de conversão, a retenção de usuários e a clareza das informações no portal:
 
-### História de Usuário 01: Clareza e Robustez nos Banners de Campanha
-> **Como** usuário acessando a campanha de prêmios,  
-> **Quero** que todas as informações de regras e premiações estejam presentes tanto no elemento visual quanto nos metadados textuais do sistema,  
-> **Para que** a proposta de valor da campanha seja compreendida de forma imediata por qualquer canal de acesso.
-
-* **Critérios de Aceite (Gherkin):**
-  * **Cenário:** Validação de metadados em elementos visuais de impacto
-    * **Dado** que o usuário acessa a landing page da campanha Sicoob 2026,
-    * **Quando** o sistema renderiza os banners de premiação,
-    * **Então** o front-end deve associar descrições textuais estruturadas (`alt` / metadados) detalhando os prêmios (3 Fiat Strada, 1 Hilux e motos Honda) e a regra de conversão (R$ 200 = 1 cupom).
+*   **Transparência de Premiação e Regras:** Banners contendo informações cruciais de negócio (como a regra "A cada R$ 200 depositados = 1 cupom" e as descrições dos veículos sorteados) estavam atrelados exclusivamente a elementos visuais estáticos, gerando perda total de contexto e quebra no fluxo de conversão caso a camada gráfica falhasse na renderização.
+*   **Integridade dos Tutoriais de Conversão:** Os blocos de instrução estruturados em passos ordenados ("Como Participar" e "Como Abrir Conta") careciam de marcação semântica nativa, gerando o risco de fragmentação na ordem sequencial de leitura em dispositivos móveis ou tecnologias assistivas.
+*   **Saúde dos Links e CTAs (Call to Action):** Presença de elementos interativos sem rótulos de destino claros ou com âncoras vazias, criando pontos de atrito na jornada e aumentando a taxa de rejeição por cliques perdidos.
 
 ---
 
-### História de Usuário 02: Sequenciamento Lógico dos Tutoriais de Conversão
-> **Como** potencial cliente interessado em participar da promoção,  
-> **Quero** visualizar os passos de participação e abertura de conta em uma sequência lógica e contínua,  
-> **Para que** eu não perca nenhuma etapa regulamentar ou aviso importante sobre elegibilidade.
+## 📝 3. Histórias de Usuário (User Stories) & Critérios de Aceite (BDD / Gherkin)
 
-* **Critérios de Aceite (Gherkin):**
-  * **Cenário:** Estruturação semântica de listas de instruções
-    * **Dado** que a página exibe o tutorial "Como Participar",
-    * **Quando** a arquitetura de código for compilada,
-    * **Então** a seção deve utilizar marcação semântica nativa (`<ol>` e `<li>`), garantindo que o DOM mantenha a ordem correta de leitura sem saltar blocos informativos.
+### 📊 História de Usuário 01: Robustez e Transparência nos Banners da Campanha
+*   **COMO** um investidor ou poupador acessando o portal da campanha de prêmios,
+*   **QUERO** que todas as regras de conversão de cupons e descrições das premiações estejam presentes tanto no elemento visual quanto nos metadados estruturais do sistema,
+*   **PARA** que a proposta de valor e o regulamento da campanha sejam compreendidos de forma imediata por qualquer perfil de cliente.
+
+#### 📐 Critérios de Aceite (Padrão Gherkin / BDD):
+*   **Cenário:** Validação de metadados em elementos visuais de impacto
+    *   **Dado que** o cliente acessa a landing page da campanha Poupança Premiada Sicoob;
+    *   **Quando** o sistema renderizar os banners de premiação na tela;
+    *   **Então** o front-end deve carregar descrições textuais estruturadas (atributos `alt` e metadados) detalhando os prêmios (3 Fiat Strada, 1 Hilux e motos Honda) e a regra de conversão de valores (R$ 200 = 1 cupom).
 
 ---
 
-### História de Usuário 03: Governança de Links e Redirecionamentos
-> **Como** usuário interagindo com os botões de ação (CTA),  
-> **Quero** que todos os links da página apontem para rotas válidas e rotuladas,  
-> **Para que** o sistema elimine pontos de atrito ou cliques em "links vazios".
+### ⏳ História de Usuário 02: Sequenciamento Lógico dos Tutoriais de Conversão
+*   **COMO** um potencial cliente interessado em aderir à promoção,
+*   **QUERO** visualizar os passos de participação e o fluxo de abertura de conta em uma sequência lógica, intuitiva e contínua,
+*   **PARA** que eu consiga concluir o processo de cadastro sem perder nenhuma etapa regulamentar ou aviso de elegibilidade.
 
-* **Critérios de Aceite (Gherkin):**
-  * **Cenário:** Auditoria de integridade de elementos âncora
-    * **Dado** que o sistema passa por uma varredura de validação estática de código,
-    * **Quando** o motor analisar os componentes do tipo link (`<a>`),
-    * **Então** 0% dos elementos interativos podem estar desprovidos de texto descritivo ou rótulo de destino (`aria-label`).
+#### 📐 Critérios de Aceite (Padrão Gherkin / BDD):
+*   **Cenário:** Estruturação semântica e hierarquia de listas de instruções
+    *   **Dado que** a interface exibe o tutorial dinâmico "Como Participar";
+    *   **Quando** a arquitetura do código da página for compilada no navegador;
+    *   **Então** a seção deve utilizar obrigatoriamente marcação semântica ordenada (tags `<ol>` e `<li>`), garantindo que o DOM mantenha a sequência cronológica correta e proíba saltos inesperados de blocos informativos.
+
+---
+
+### 🔗 História de Usuário 03: Governança de Links e Botões de Ação (CTAs)
+*   **COMO** um cliente interagindo com os botões de ação e conversão do portal,
+*   **QUERO** que todos os links da página apontem para rotas válidas, íntegras e textualmente identificadas,
+*   **PARA** mitigar pontos de frustração e eliminar cliques em "links vazios" ou botões sem resposta.
+
+#### 📐 Critérios de Aceite (Padrão Gherkin / BDD):
+*   **Cenário:** Auditoria de integridade de elementos âncora interativos
+    *   **Dado que** o sistema executa uma varredura de validação estática de código na árvore do DOM;
+    *   **Quando** o motor analisar os componentes globais do tipo link (tag `<a>`) e botões de ação;
+    *   **Então** 0% dos elementos interativos podem estar desprovidos de texto descritivo interno ou de rótulos explícitos de destino (atributos `aria-label`).
+
+---
+
+## 💡 4. Diretrizes Técnicas Adicionais para a Engenharia
+*   **Saneamento de Tags Semânticas (HTML5):** Toda a arquitetura do portal deve seguir a árvore do DOM de forma limpa, garantindo a ordenação e a correta aplicação de cabeçalhos (`<h1>` a `<h6>`) para evitar quebras de contexto informacional.
+*   **Blindagem de Metadados:** Elementos de mídia e layouts de carrossel móvel devem conter marcações textuais internas que garantam redundância de leitura caso o carregamento de mídia externa sofra delay ou restrição de servidor.
